@@ -167,7 +167,7 @@ namespace :deploy do
 
   desc 'Log details of the deploy'
   task :log_revision do
-    on roles(:all) do
+    on release_roles(:all) do
       within releases_path do
         execute %{echo "#{revision_log_message}" >> #{revision_log}}
       end
